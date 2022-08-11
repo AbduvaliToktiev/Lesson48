@@ -22,7 +22,7 @@ public class Connect {
 
     public Map<Car, CarsInformation> dataBaseInHashMap() {
         Map<Car, CarsInformation> hashMap = new HashMap<>();
-        String sql = "select ci.id as car_i_id, * from \"Lesson49\".cars " +
+        String sql = "select ci.id, * from \"Lesson49\".cars " +
                 "inner join \"Lesson49\".cars_information ci on cars.id = ci.cars_id";
         try (Connection connection = connection();
              Statement statement = connection.createStatement();
@@ -34,7 +34,7 @@ public class Connect {
 
                 CarsInformation carsInformation = new CarsInformation();
                 carsInformation.setCarsId(resultSet.getInt("CARS_ID"));
-                carsInformation.setId(resultSet.getInt("CAR_I_ID"));
+                carsInformation.setId(resultSet.getInt("CARS_ID"));
                 carsInformation.setYearOfIssue(resultSet.getInt("YEAR_OF_ISSUE"));
                 carsInformation.setModel(resultSet.getString("MODEL"));
                 carsInformation.setPrice(resultSet.getInt("PRICE"));

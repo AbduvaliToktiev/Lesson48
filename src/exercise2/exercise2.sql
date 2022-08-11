@@ -27,5 +27,5 @@ insert into "Lesson49".cars_information(cars_id, year_of_issue, model, price, co
 insert into "Lesson49".cars_information(cars_id, year_of_issue, model, price, color) values (2, 2015, 'Brabus', 25000, 'Black');
 
 
-select ci.id as car_i_id, * from "Lesson49".cars
-                  inner join "Lesson49".cars_information ci on cars.id = ci.cars_id
+select ci.id, * from "Lesson49".cars c
+                         inner join "Lesson49".cars_information ci on c.id = ci.cars_id;
